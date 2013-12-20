@@ -1,6 +1,6 @@
 # ErgoWallpaper
 
-This project is not production ready and less than 50% ready
+This project is not production ready and less than 50% complete
 
 ## What is ErgoWallpaper ?
 

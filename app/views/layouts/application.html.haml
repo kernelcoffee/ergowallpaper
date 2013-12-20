@@ -1,0 +1,19 @@
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  = render :partial => 'layouts/head'
+  %body
+    = render :partial => 'layouts/navbar'
+    .container
+      = render :partial => "shared/flash_messages", :locals => {:flash => flash}
+      .row
+        - if user_signed_in?
+          .col-sm-1
+            = render :partial => 'shared/menu'
+          .col-sm-10.col-sm-offset-1
+            = yield
+        - else
+          .col-lg-12.col
+            = yield
+
+    .row
+      = render :partial => 'layouts/footer'

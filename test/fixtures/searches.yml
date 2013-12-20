@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  keywords: MyString
+  aspectRatio_id: 1
+  color_id: 1
+  resolution_id: 1
+  target_user_id: 1
+  album_id: 1
+
+two:
+  keywords: MyString
+  aspectRatio_id: 1
+  color_id: 1
+  resolution_id: 1
+  target_user_id: 1
+  album_id: 1

@@ -1,0 +1,34 @@
+%h1
+  = t("admin.resolutions.index")
+
+.row
+  .col-lg-7
+    - @aspect_ratios.each do |a|
+      %h3
+        = a.name
+        = "(#{a.ratio})"
+        = link_to edit_admin_aspect_ratio_path(a.id) do
+          %button.icon
+            %i.icon-edit
+      %table.table{:id => "resolutions"}
+        %thead
+          %tr
+            %th
+              = t("width")
+            %th
+              = t("height")
+            %th
+              = t("portrait")
+            %th
+              = t("multi")
+            %th
+              = t("delete")
+        %tbody
+          = render a.resolutions
+%row
+  = link_to new_admin_resolution_path, id: "new_resolution_link", remote: true do
+    %button.btn.btn-primary{:type => "button"}
+      = t("admin.resolutions.new")
+  = link_to reset_default_admin_resolutions_path, id: "default_resolution_link" do
+    %button.btn.btn-primary{:type => "button"}
+      = t("admin.resolutions.reset_default")

@@ -1,0 +1,21 @@
+%h1
+  = t("admin.settings.index")
+
+%table.table{:id => "settings"}
+  - @settings.each do |item|
+    %tr
+      %td
+        = t("#{item.var}")
+      %td
+        = item.value
+      %td
+        = item.thing_id
+      %td
+        = item.thing_type
+      %td
+        = link_to 'Edit', edit_admin_setting_path(item)
+	  
+.row
+  = link_to reset_default_admin_settings_path, id: "default_settings_link" do
+    %button.btn.btn-primary{:type => "button"}
+      = t("admin.settings.reset_default")

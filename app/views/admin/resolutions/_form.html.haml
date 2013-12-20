@@ -1,0 +1,5 @@
+= form_for [:admin, @resolution], remote: true do |f|
+  = f.number_field :width
+  = f.number_field :height
+  %p
+    = f.submit

@@ -1,0 +1,6 @@
+$('#wallpapers').append('<%= j render(@wallpapers) %>');
+<% if @wallpapers.current_page < @wallpapers.num_pages %>
+  $('.pagination').replaceWith('<%= j paginate(@wallpapers) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

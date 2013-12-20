@@ -1,0 +1,37 @@
+.row
+  = link_to @wallpaper.image_url do
+    = image_tag @wallpaper.image_url, :class => "wallpaper"
+.row
+  %p
+    %strong
+      = @wallpaper.name
+
+  = link_to 'back', wallpapers_path
+  / = link_to 'report', report_path(@wallpaper)
+  - if user_signed_in? && current_user.admin?
+    = link_to 'edit', edit_wallpaper_path
+    = link_to "remove", @wallpaper, data: { confirm: 'Are you sure ?',  :method => :delete  }
+
+.row
+  - if @wallpaper.processed == true
+    %p
+      = @wallpaper.get_geometry
+    %p
+      - @wallpaper.colorations.each do |c|
+        = link_to "", searches_path + "?search[color]=#{c.hex}", :style => "background-color: #{c.hex}", :class => "btn"
+
+  - @wallpaper.similars.each do |w|
+    .image
+      = link_to image_tag(w.image_url(:thumb).to_s), wallpaper_path(w) 
+      - if user_signed_in? && current_user.admin?
+        .action
+          = link_to "edit", edit_wallpaper_path(w)
+          = link_to "remove", w, data: { confirm: 'Are you sure ?',  :method => :delete  }
+
+  - @wallpaper.inverse_similars.each do |s|
+    .image
+      = link_to image_tag(s.image_url(:thumb).to_s), wallpaper_path(s) 
+      - if user_signed_in? && current_user.admin?
+        .action
+          = link_to "edit", edit_wallpaper_path(s)
+          = link_to "remove", s, data: { confirm: 'Are you sure ?',  :method => :delete  }

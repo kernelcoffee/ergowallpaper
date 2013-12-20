@@ -1,0 +1,10 @@
+- if  user_signed_in?
+  - if fav = current_user.favorites.find_by(:wallpaper_id => wallpaper.id)
+    = form_for fav, :html => {:method => :delete}, :remote => true do |f|
+      %button.icon{:id => "favorite_button"}
+        = fa_icon "star 2x", id: "favorite-icon"
+  - else
+    = form_for current_user.favorites.build(:wallpaper_id => wallpaper.id), :remote => true do |f|
+      = f.hidden_field :wallpaper_id
+      %button.icon{:id => "favorite"}
+        = fa_icon "star-empty 2x", id: "favorite-icon"

@@ -1,0 +1,5 @@
+<% if @wallpaper.new_record? %>
+  alert("Failed to upload wallpaper: <%= j @wallpaper.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+  $("#wallpapers").prepend("<%= j render(@wallpaper) %>");
+<% end %>

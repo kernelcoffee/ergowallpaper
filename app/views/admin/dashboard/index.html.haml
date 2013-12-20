@@ -1,0 +1,53 @@
+%h1
+  = t("admin.index")
+
+.row
+  .col-lg-3
+    .row.well
+      %h3.centered
+        = t("admin.statistics.users")
+      %p
+        = t("admin.statistics.users")
+        = @users.count
+      = link_to "More", admin_users_path
+
+    .row.well
+      %h3.centered
+        = t("admin.statistics.wallpapers")
+      %p
+        = t("wallpapers.nb_uploaded")
+        = @wallpapers.count
+      %p
+        = t("wallpapers.unprocessed")
+        = @unprocessed.count
+        - if @unprocessed.count > 0
+          = link_to finish_processing_admin_wallpapers_path do
+            = t("wallpapers.process_all")
+      %p
+        = t("wallpapers.unreviewed")
+        = @unreviewed.count
+      %p
+        = t("wallpapers.resolutions")
+        = @resolutions.count
+        = link_to "edit", admin_resolutions_path
+      = link_to "More", admin_wallpapers_path
+      
+  .col-lg-3.col-lg-offset-1
+    .row.well
+      %h3.centered
+        = t("admin.settings")
+      %p
+        = t("settings.storage_path")
+        = Settings.storage_path
+      %p
+        = t("settings.redis_database")
+        = Settings.redis_database
+      %p
+        = t("settings.similars.threshold")
+        = Settings.image_threshold
+      = link_to "Edit", admin_settings_path
+
+  .col-lg-3.col-lg-offset-1
+    .row.well
+      %h3.centered
+        third colomn

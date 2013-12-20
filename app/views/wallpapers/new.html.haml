@@ -1,0 +1,13 @@
+.small-8.columns
+  = form_for @wallpaper do |f|
+    %p
+      = f.label :name
+      = f.text_field :name 
+    %p
+      = f.label :path
+      = f.file_field :path
+    %p
+      = f.label :remote_image_url
+      = f.text_field :remote_image_url
+    %p
+      = f.submit

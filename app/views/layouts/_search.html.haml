@@ -1,0 +1,31 @@
+= form_for @search, :method => 'get', :html => {:class => "navbar-form navbar-left", :role => "search"} do |f|
+  .form-group
+    %select.search-options.multiselect{:name => "options[]", id: "options", :multiple => "multiple"}
+      %option{:value => "portrait", :selected => @search.portrait}
+        = t("search.portrait")
+      %option{:value => "reviewed", :selected => @search.reviewed}
+        = t("search.reviewed")
+      %optgroup{:label => "Purity"}
+        %option{:value => "safe", :selected => @search.purity_safe}
+          = t("purity.safe")
+        %option{:value => "sketchy", :selected => @search.purity_sketchy}
+          = t("purity.sketchy")
+        - if user_signed_in?
+          %option{:value => "nsfv", :selected => @search.purity_nsfw}
+            = t("purity.nsfw")
+  .form-group
+    %select.search-resolutions{:name => "resolution", id: "resolution"}
+      %option{:value => "all"}
+        = t("search.all")
+      - @aspect_ratios.each do |a|
+        %optgroup{:label => "#{a.name}"}
+          - a.resolutions.each do |r|
+            %option{:value => r.get_geometry, :selected => @search.geometry == r.get_geometry}
+              = r.get_geometry
+  .form-group
+    = f.text_field :keywords, :class => "form-control", :placeholder => "Search..."
+  .form-group
+    = f.text_field :color, :class => "form-control", :placeholder => "Color..."
+  %button.btn.btn-default{:type => "submit"}
+    %i.icon-search
+

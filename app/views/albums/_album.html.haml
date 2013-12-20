@@ -1,0 +1,5 @@
+%li.album_menu{:id => "album_menu_#{album.id}", :data => {:id => album.id, :add => {:url => add_albums_path}}}
+  = link_to album do
+    = album.name
+    %span.badge
+      = album.wallpapers.size

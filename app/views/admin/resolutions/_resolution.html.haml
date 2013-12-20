@@ -1,0 +1,12 @@
+%tr{:id => "tr_resolution_#{resolution.id}"}
+  = form_for [:admin, resolution], remote: true do |f|
+    %td
+      = resolution.width
+    %td
+      = resolution.height
+    %td
+      = f.check_box :portrait
+    %td
+      = f.number_field :multi
+    %td
+      = link_to "delete", [:admin, resolution], data: { confirm: 'Are you sure ?',  :method => :delete }, remote: true

@@ -1,0 +1,15 @@
+%nav.navbar.navbar-default.navbar-static-top.navbar-inverse{:role => "navigation"}
+  // Brand and toggle get grouped for better mobile display
+  .navbar-header
+    %button.navbar-toggle{:data => {:toggle => "collapse", :target => ".navbar-ex1-collapse"}}
+      %span.sr-only
+        Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    = link_to root_path, :class => "navbar-brand" do
+      ErgoWallpaper
+  // Collect the nav links, forms, and other content for toggling
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    = render :partial => 'layouts/search'
+    = render :partial => 'layouts/controls'

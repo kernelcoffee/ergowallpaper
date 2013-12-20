@@ -1,0 +1,145 @@
+/*
+ * http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/
+ */
+
+$thumb_width: 300px;
+$thumb_height: 220px;
+
+.container {
+    max-width: 100%;
+}
+
+.img-thumbnail, .thumbnail {
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+}
+
+.thumbnail {
+    width: 300px;
+    height: 188px;
+    margin: 3px;
+    margin-bottom: none;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 2px 2px 3px #000;
+    cursor: default;
+    border-style: none;
+    border-width: none;
+    border-radius: none;
+    padding: none;
+    color: white;
+
+    .overlay, .content {
+        width: 150px;
+        height: 200px;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0
+    }
+
+    img {
+        display: block;
+        position: relative
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-size: 17px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        margin: 0 0 40px 0
+    }
+    
+    p {
+/*        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: 12px;
+*/      
+        position: relative;
+        color: #fff;
+        padding: 10px 20px 20px;
+        text-align: center
+    }
+    
+    a {
+        .info {
+            display: inline-block;
+            text-decoration: none;
+            padding: 7px 14px;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            box-shadow: 0 0 1px #000
+        }
+        .info:hover {
+            box-shadow: 0 0 5px #000
+        }
+    }
+}
+
+.thumbnail-first {
+    img {
+        transition: all 0.7s linear;
+    }
+
+    .overlay {
+        opacity: 0;
+        background-color: rgba(0,0, 0, 0.7);
+        transition: all 0.2s ease-in-out;
+    }
+
+    h2 {
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+
+    p {
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.2s linear;
+    }
+
+    a.info{
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+.thumbnail-first:hover {
+    img { 
+        transform: scale(1.05);
+    } 
+    
+    .overlay { 
+        opacity: 1;
+    }
+    h2, p, a.info {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    p {
+        transition-delay: 0.2s;
+    }
+    a.info {
+        transition-delay: 0.2s;
+    }
+}
+
+button.icon, button.icon:hover, button.icon:focus {
+    background-repeat:no-repeat;
+    background-color: transparent;
+    box-shadow: none;
+    transition: none;
+    border-style: none;
+    border-width: none;
+    color:white;
+}

@@ -1,0 +1,48 @@
+/*
+*= require_self
+*= require_tree .
+*= require font-awesome
+*= require bootstrap-multiselect
+*= require jquery-minicolors
+*/
+
+@import 'twitter/bootstrap';
+
+.container {
+  max-width: 1920px;
+  min-width: 100%;
+}
+
+.centered {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wallpaper {
+	min-height: 100px;
+	min-width: 100px;
+	overflow: hidden;
+	background-color: "#fff";
+}
+
+.caret {
+	color: white;
+}
+
+.search {
+	color: white;
+}
+
+.minicolors-input {
+  height: 35px;
+}
+
+.footer {
+	margin-bottom: none;
+	border-radius: 0px;
+	background-color: rgb(28, 30, 34);
+	border: 1px solid rgb(12, 13, 14);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+	min-height: 20px;
+}

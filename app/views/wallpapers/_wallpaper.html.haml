@@ -1,0 +1,14 @@
+.thumbnail.thumbnail-first{id: wallpaper.id}
+  = link_to image_tag( wallpaper.image_url(:thumb)), wallpaper_path(wallpaper), :target => "_blank"
+  .overlay
+    %h2
+      = wallpaper.get_geometry
+    .favorite{:id => "favorite_#{wallpaper.id}"}
+      = render "shared/favorite_form", wallpaper: wallpaper
+    - if !@album.nil?
+      %p
+        = link_to remove_albums_path(:album_id => @album.id, :wallpaper_id => wallpaper.id), data: { remote: true  } do
+          = t("album.removefrom")
+
+
+      / = link_to "edit", edit_wallpaper_path(wallpaper)

@@ -1,0 +1,39 @@
+%ul.nav.nav-stacked.well.affix
+  %li
+    = link_to current_user do
+      = t("menu.dashboard")
+  %li
+    = link_to wallpapers_path do
+      = t("menu.wallpapers")
+  %li
+    = link_to upload_wallpapers_path do
+      = t("menu.upload")
+      %span.badge
+        = current_user.wallpapers.count
+  %li
+    = link_to favorites_path do
+      = t("menu.favorites")
+      %span.badge
+        = current_user.favorites.count
+  %li
+    %ul.nav.albums{:id => "albums_menu"}
+      - current_user.albums.each do |album|
+        = render :partial => 'albums/album', :object => album
+  %li
+    %ul.nav
+      %li
+        = link_to new_album_path, id: "new_album_link", remote: true do
+          %button.btn.btn-primary.btn-xs.btn-block{:type => "button"}
+            = t("album.new")
+  - if current_user.admin?
+    %li
+      %ul.nav.admin
+        %li.admin
+          = link_to admin_path do
+            = t("menu.administration")
+        %li.active.admin
+          = link_to similitudes_path do
+            = t("menu.similars")
+        %li.admin
+          = link_to '/sidekiq' do
+            = t("menu.sidekiq")

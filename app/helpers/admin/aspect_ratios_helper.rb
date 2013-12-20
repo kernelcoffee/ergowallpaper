@@ -1,0 +1,2 @@
+module Admin::AspectRatiosHelper
+end

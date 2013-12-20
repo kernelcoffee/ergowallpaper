@@ -1,0 +1,5 @@
+= form_for [:admin, @setting]  do |f|
+  .form-inputs
+    = @setting.var
+    = f.text_field :value
+    = f.submit "Save"

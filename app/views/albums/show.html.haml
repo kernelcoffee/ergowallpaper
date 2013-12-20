@@ -1,0 +1,11 @@
+.row
+  %h1
+    = @album.name
+
+= link_to "delete", @album, data: { confirm: 'Are you sure ?',  :method => :delete  }
+
+.row
+  .wallpapers{:id => "wallpapers"}
+    = render @wallpapers
+.row
+  = paginate @wallpapers

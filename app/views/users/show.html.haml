@@ -1,0 +1,33 @@
+%h1
+  = @user.name
+
+.row
+  .col-lg-3
+    .row.well
+      %h3.centered
+        = t("user.informations")
+      %p
+        Name: 
+        = @user.name
+      - if current_user.id == @user.id
+        %p
+          Email:  
+          = @user.email if @user.email
+        = link_to "Edit", edit_user_registration_path
+
+    .row.well
+      %h3.centered
+        = t("user.statistics")
+      %p
+        Wallpaper uploaded : 
+        = current_user.wallpapers.count
+
+  .col-lg-3.col-lg-offset-1
+    .row.well
+      %h3.centered
+        = t("user.most_populars")
+
+  .col-lg-3.col-lg-offset-1
+    .row.well
+      %h3.centered
+        = t("user.public_albums")

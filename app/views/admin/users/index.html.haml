@@ -1,0 +1,19 @@
+%h1
+  = t("admin.users.index")
+
+%row
+  %table.table{:id => "users"}
+    %thead
+      %tr
+        %th
+          = t("user.name")
+        %th
+          = t("user.email")
+        %th
+          = t("wallpaper.nb_upload")
+        %th
+          = t("role")
+        %th
+          = t("edit")
+    %tbody
+      = render @users

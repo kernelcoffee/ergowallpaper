@@ -1,0 +1,21 @@
+.row
+  .col-lg-12.well
+    %h1.centered
+      live Tiles
+
+.row
+  .col-lg-3
+    .row.well
+      %h3.centered
+        = t("tags.populars")
+
+  .col-lg-4.col-lg-offset-1
+    .row.well
+      %h3.centered
+        = t("statistics")
+
+  .col-lg-3.col-lg-offset-1
+    .row.well
+      %h3.centered
+        = t("TODO")
+      = markdown(file_to_string('TODO.md'))

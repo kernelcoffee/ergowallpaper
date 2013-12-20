@@ -1,0 +1,39 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/config/database.yml
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+scripts/.sass-cache/*
+
+/bin
+*~
+
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.svn
+config/email.yml
+config/database.yml
+db/seeds.rb
+.DS_Store
+*/**/.DS_Store
+public/uploads/
+public/storage/
+public/wallpaper/
+public/bktree/
+*.zip
+*.tar.gz
+# Ignore application configuration
+/config/application.yml
+dump.rdb
+
+public/tree
+config/database.yml
+Gemfile.lock

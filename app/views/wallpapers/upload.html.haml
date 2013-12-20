@@ -1,0 +1,23 @@
+.row
+  %h2
+    = t("wallpapers.upload")
+
+  = form_for Wallpaper.new do |w|
+    = w.label :image, "Upload Wallpaper:"
+    = w.file_field :image, multiple: true, name: "Wallpaper[image]"
+
+.row
+  %h2
+    = t("wallpapers.mywallpapers")
+
+.row
+  .wallpapers{:id => "wallpapers"}
+    = render @wallpapers
+.row
+  = paginate @wallpapers
+
+%script{:id => "template-upload", :type =>"text/x-tmpl"}
+  .upload
+    {%=o.name%}
+    .progress
+      .bar{:style => "width: 0%"}

@@ -1,0 +1,62 @@
+#new_wallpaper {
+  clear: both;
+}
+
+.image {
+  float: left;
+  margin: 2px;
+  width: 300px;
+  height: 188px;
+  box-shadow: 0px 1px 3px #000;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+
+ .overlay .content {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+  }
+
+  .overlay {display: none;}
+
+  .overlay:hover {
+    display: block;
+    position: absolute;
+    z-index:42;
+    width:300px;
+    height: 188px;
+ }
+
+  .name {
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .actions {
+    font-size: 10px;
+    text-align: center;
+    color: #777;
+  }
+}
+
+.upload {
+  border-top: solid 1px #CCC;
+  padding-top: 10px;
+  margin-top: 10px;
+
+  .progress {
+    margin-top: 8px;
+    border: solid 1px #555;
+    border-radius: 3px;
+    .bar {
+      height: 20px;
+      background: #3EC144;
+    }
+  }
+}

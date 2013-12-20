@@ -1,30 +1,34 @@
 # ErgoWallpaper
 
+This project is not production ready and less than 50% ready
+
 ## What is ErgoWallpaper ?
 
 ErgoWallpaper is a wallpaper manager.  
 
 ## What is it for ?
 
-This website provides:  
-
+This website provides:
+- Image upload
+- Image analitics to detect full and partial similarities
+- Album managements
 
 ## How to run it
 
 It is a Rails 4 application with some dependencies :  
 - Sidekiq for background process
 - pHash for image analysis
-- Sphinx for image searching
 
 
 ## pHash
 
-OS X
+- OS X
  brew/port install phash
-Fedora
+
+- Fedora/CentOS
  use the install_phash.sh script
 
-Debian/Ubuntu
+- Debian/Ubuntu
  apt-get install phash
 
 ## Contribute
@@ -32,9 +36,4 @@ Debian/Ubuntu
 contact me
 
 ## License
-This program
-
-TODO
-- fix wallpaper upload stability and improve
-- actually do some css work
-- put some javascript sweetness everywhere
+Not defined yet
